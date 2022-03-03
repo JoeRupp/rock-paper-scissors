@@ -13,15 +13,14 @@
         <img class="icon" src="./assets/user-icon.png" alt="good pigeon">
         <div class="player-info">
           <h2>You</h2>
-          <p>wins: 0</p>
+          <p class="user-wins">wins: 0</p>
         </div>
       </section>
-      <!-- <h2>Choose Your Game</h2> -->
       <section class="enemy">
         <img class="icon" src="./assets/enemy-icon.png" alt="evil pigeon">
         <div class="player-info">
           <h2>Enemy</h2>
-          <p>wins: 0</p>
+          <p class="enemy-wins">wins: 0</p>
         </div>
       </section>
     </header>
@@ -50,23 +49,23 @@
         <section class="choices" >
           <h2>Pick Your Champion</h2>
           <div class="champion-options">
-            <div class="champion">
+            <div class="champion fire">
               <img class="classic extreme" src="./assets/pigeon-fire-L.png" alt="pigeon holding a lighter">
               <p>Fire</p>
             </div>
-            <div class="champion">
+            <div class="champion earth">
               <img class="classic extreme" src="./assets/pigeon-earth-L.png" alt="pigeon holding a potted plant">
               <p>Earth</p>
             </div>
-            <div class="champion">
+            <div class="champion water">
               <img class="classic extreme" src="./assets/pigeon-water-L.png" alt="pigeon wearing a snorkle">
               <p>Water</p>
             </div>
-            <div class="champion">
+            <div class="champion air">
               <img class="extreme" src="./assets/pigeon-air-L.png" alt="pigeon wearing propeller hat">
               <p>Air</p>
             </div>
-            <div class="champion">
+            <div class="champion void">
               <img class="extreme" src="./assets/pigeon-void-L.png" alt="pigeon that has been beyond space and time, but still a pigeon">
               <p>Void</p>
             </div>
@@ -74,7 +73,7 @@
         </section>
       </section>
       <section class="battle hidden">
-        <h2>Battle!</h2>
+        <h2 class="outcome">Battle!</h2>
         <section class="battle-ground">
           <div class="user-champion">
           </div>
@@ -87,5 +86,7 @@
       <button class="hidden">Change Game</button>
     </footer>
   </body>
+  <script type="text/javascript" src="player.js"></script>
+  <script type="text/javascript" src="game.js"></script>
   <script type="text/javascript" src="main.js"></script>
 </html>
