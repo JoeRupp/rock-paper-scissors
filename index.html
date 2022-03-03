@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="./styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;500;800&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <section>
+      <h1>BATTLE OF THE PIGEONS</h1>
+    </section>
+    <header>
+      <section class="user">
+        <img src="./assets/user-icon.png" alt="good pigeon">
+        <h2>You</h2>
+        <p>wins: 0</p>
+      </section>
+      <section class="enemy">
+        <img src="./assets/enemy-icon.png" alt="evil pigeon">
+        <h2>Enemy</h2>
+        <p>wins: 0</p>
+      </section>
+    </header>
+    <main>
+      <section class="game-mode">
+        <div class="classic">
+          <h2>Play Classic</h2>
+          <p>
+            fire -> earth <br>
+            earth -> water <br>
+            water -> fire <br>
+          </p>
+        </div>
+        <div class="classic">
+          <h2>Play Extreme</h2>
+          <p>
+            fire -> earth / void <br>
+            earth -> water / air <br>
+            water -> fire / air <br>
+            air -> void / fire <br>
+            void -> earth / water <br>
+          </p>
+        </div>
+      </section>
+      <section class="fighter-selection hidden">
+        <div>
+          <h2>Pick Your Champion</h2>
+          <img class="classic extreme" src="./assets/pigeon-fire-L.png" alt="pigeon holding a lighter">
+          <p>Fire</p>
+          <img class="classic extreme" src="./assets/pigeon-earth-L.png" alt="pigeon holding a potted plant">
+          <p>Earth</p>
+          <img class="classic extreme" src="./assets/pigeon-water-L.png" alt="pigeon wearing a snorkle">
+          <p>Water</p>
+          <img class="extreme" src="./assets/pigeon-earth-L.png" alt="pigeon wearing propeller hat">
+          <p>Air</p>
+          <img class="extreme" src="./assets/pigeon-water-L.png" alt="pigeon that has been beyond space and time, but still a pigeon">
+          <p>Void</p>
+        </div>
+      </section>
+      <section class="battle hidden">
+        <div class="user-choice">
+        </div>
+        <div class="enemy-choice">
+        </div>
+      </section>
+    </main>
+    <footer class="hidden">
+      <button>Change Game</button>
+    </footer>
+  </body>
+  <script type="text/javascript" src="main.js"></script>
+</html>
