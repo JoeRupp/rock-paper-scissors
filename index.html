@@ -10,19 +10,24 @@
     </section>
     <header>
       <section class="user">
-        <img src="./assets/user-icon.png" alt="good pigeon">
-        <h2>You</h2>
-        <p>wins: 0</p>
+        <img class="icon" src="./assets/user-icon.png" alt="good pigeon">
+        <div class="player-info">
+          <h2>You</h2>
+          <p>wins: 0</p>
+        </div>
       </section>
+      <!-- <h2>Choose Your Game</h2> -->
       <section class="enemy">
-        <img src="./assets/enemy-icon.png" alt="evil pigeon">
-        <h2>Enemy</h2>
-        <p>wins: 0</p>
+        <img class="icon" src="./assets/enemy-icon.png" alt="evil pigeon">
+        <div class="player-info">
+          <h2>Enemy</h2>
+          <p>wins: 0</p>
+        </div>
       </section>
     </header>
     <main>
       <section class="game-mode">
-        <div class="classic">
+        <div class="classic-choice difficulty-choice">
           <h2>Play Classic</h2>
           <p>
             fire -> earth <br>
@@ -30,7 +35,7 @@
             water -> fire <br>
           </p>
         </div>
-        <div class="classic">
+        <div class="extreme-choice difficulty-choice">
           <h2>Play Extreme</h2>
           <p>
             fire -> earth / void <br>
@@ -41,30 +46,45 @@
           </p>
         </div>
       </section>
-      <section class="fighter-selection hidden">
-        <div>
+      <section class="selection hidden">
+        <section class="choices" >
           <h2>Pick Your Champion</h2>
-          <img class="classic extreme" src="./assets/pigeon-fire-L.png" alt="pigeon holding a lighter">
-          <p>Fire</p>
-          <img class="classic extreme" src="./assets/pigeon-earth-L.png" alt="pigeon holding a potted plant">
-          <p>Earth</p>
-          <img class="classic extreme" src="./assets/pigeon-water-L.png" alt="pigeon wearing a snorkle">
-          <p>Water</p>
-          <img class="extreme" src="./assets/pigeon-earth-L.png" alt="pigeon wearing propeller hat">
-          <p>Air</p>
-          <img class="extreme" src="./assets/pigeon-water-L.png" alt="pigeon that has been beyond space and time, but still a pigeon">
-          <p>Void</p>
-        </div>
+          <div class="champion-options">
+            <div class="champion">
+              <img class="classic extreme" src="./assets/pigeon-fire-L.png" alt="pigeon holding a lighter">
+              <p>Fire</p>
+            </div>
+            <div class="champion">
+              <img class="classic extreme" src="./assets/pigeon-earth-L.png" alt="pigeon holding a potted plant">
+              <p>Earth</p>
+            </div>
+            <div class="champion">
+              <img class="classic extreme" src="./assets/pigeon-water-L.png" alt="pigeon wearing a snorkle">
+              <p>Water</p>
+            </div>
+            <div class="champion">
+              <img class="extreme" src="./assets/pigeon-air-L.png" alt="pigeon wearing propeller hat">
+              <p>Air</p>
+            </div>
+            <div class="champion">
+              <img class="extreme" src="./assets/pigeon-void-L.png" alt="pigeon that has been beyond space and time, but still a pigeon">
+              <p>Void</p>
+            </div>
+          </div>
+        </section>
       </section>
       <section class="battle hidden">
-        <div class="user-choice">
-        </div>
-        <div class="enemy-choice">
-        </div>
+        <h2>Battle!</h2>
+        <section class="battle-ground">
+          <div class="user-champion">
+          </div>
+          <div class="enemy-champion">
+          </div>
+        </section>
       </section>
     </main>
-    <footer class="hidden">
-      <button>Change Game</button>
+    <footer>
+      <button class="hidden">Change Game</button>
     </footer>
   </body>
   <script type="text/javascript" src="main.js"></script>
