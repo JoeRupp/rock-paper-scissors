@@ -1,9 +1,9 @@
 class Game {
   constructor() {
     this.difficultyClassic = '';
-    this.user = new Player('You');
+    this.user = new Player('You', '');
     this.userChampion = '';
-    this.enemy = new Player('Enemy');
+    this.enemy = new Player('Enemy', '');
     this.enemyChampion = '';
     this.outcome = '';
   }
