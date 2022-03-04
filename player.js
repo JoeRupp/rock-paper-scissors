@@ -6,25 +6,27 @@ class Player {
     this.champion = '';
   }
 
-  // chooseChampion(selection) {
-  //   if (selection === 'Fire') {
-  //     this.champion = 'Fire';
-  //   } else if (selection === 'Water') {
-  //     this.champion = 'Water';
-  //   } else if (selection === 'Earth') {
-  //     this.champion = 'Earth';
-  //   } else if (selection === 'Air') {
-  //     this.champion = 'Air';
-  //   } else (selection === 'Void') {
-  //     this.champion = 'Void';
-  //   }
-  // }
+  takeTurn(selection) {
+    if (selection === 'Fire') {
+        this.champion = 'Fire';
+      } else if (selection === 'Water') {
+        this.champion = 'Water';
+      } else if (selection === 'Earth') {
+        this.champion = 'Earth';
+      } else if (selection === 'Air') {
+        this.champion = 'Air';
+      } else if (selection === 'Void') {
+        this.champion = 'Void';
+      }
+  }
 
-  enemyChampion() {
-    if ('Classic') {
-      return Math.floor(Math.random() * 3);
-    } else if ('Extreme') {
-      return Math.floor(Math.random() * 5);
+  enemyTurn(difficulty) {
+    if (difficulty === 'Classic') {
+      var i = Math.floor(Math.random() * 3);
+      this.champion = champions[i];
+    } else if (difficulty === 'Extreme') {
+      var i = Math.floor(Math.random() * 5);
+      this.champion = champions[i];
     }
   }
 

@@ -1,5 +1,7 @@
 var currentGame;
 
+var champions = ['Fire', 'Earth', 'Water', 'Air', 'Void'];
+
 var userWins = document.querySelector('.user-wins');
 var enemyWins = document.querySelector('.enemy-wins');
 
@@ -42,6 +44,8 @@ function selectClassicDifficulty() {
   gameModeView.classList.add('hidden');
   selectionView.classList.remove('hidden');
   changeGameButton.classList.remove('hidden');
+  airChampion.classList.add('hidden');
+  voidChampion.classList.add('hidden');
   var difficultyChoice = 'Classic';
   currentGame.chooseDifficulty(difficultyChoice);
 }
@@ -58,4 +62,6 @@ function goToGameModeView() {
   gameModeView.classList.remove('hidden');
   selectionView.classList.add('hidden');
   changeGameButton.classList.add('hidden');
+  airChampion.classList.remove('hidden');
+  voidChampion.classList.remove('hidden');
 }
