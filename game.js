@@ -1,18 +1,18 @@
 class Game {
   constructor() {
-    this.difficultyClassic = '';
-    this.user = new Player('You');
-    this.userChampion = '';
-    this.enemy = new Player('Enemy');
-    this.enemyChampion = '';
+    this.difficulty = '';
+    this.user = new Player('You', './assets/user-icon.png');
+    this.userChampion = this.user.champion;
+    this.enemy = new Player('Enemy', './assets/enemy-icon.png');
+    this.enemyChampion = this.enemy.champion;
     this.outcome = '';
   }
 
   chooseDifficulty(difficultyChoice) {
     if (difficultyChoice === 'Extreme') {
-      this.difficultyClassic = 'Extreme';
+      this.difficulty = 'Extreme';
     } else {
-      this.difficultyClassic = 'Classic';
+      this.difficulty = 'Classic';
     }
   }
 
