@@ -1,6 +1,6 @@
 var currentGame;
 
-var champions = ['Fire', 'Earth', 'Water', 'Air', 'Void'];
+var champions = ['fire', 'earth', 'water', 'air', 'void'];
 
 var userWins = document.querySelector('.user-wins');
 var enemyWins = document.querySelector('.enemy-wins');
@@ -16,6 +16,8 @@ var waterChampion = document.querySelector('.water');
 var airChampion = document.querySelector('.air');
 var voidChampion = document.querySelector('.void');
 
+var championSelection = document.querySelector('.champion-options')
+
 var battleView = document.querySelector('.battle');
 var battleOutcome = document.querySelector('.outcome');
 var userChampion = document.querySelector('.user-champion');
@@ -28,11 +30,42 @@ window.addEventListener('load', makeNewGame);
 classicGameMode.addEventListener('click', selectClassicDifficulty);
 extremeGameMode.addEventListener('click', selectExtremeDifficulty);
 
-// fireChampion.addEventListener('click', );
-// earthChampion.addEventListener('click', );
-// waterChampion.addEventListener('click', );
-// airChampion.addEventListener('click', );
-// voidChampion.addEventListener('click', );
+championSelection.addEventListener('click', function(event) {
+  if (event.target.dataset.element === 'champion') {
+    for (var i = 0; i < champions.length; i++) {
+      if (`${champions[i]}` === event.target.id) {
+        currentGame.user.takeTurn(`${champions[i]}`);
+      }
+    }
+  }
+  currentGame.enemy.enemyTurn(currentGame.difficulty);
+  goToBattleView()
+});
+
+// fireChampion.addEventListener('click', function() {
+//   currentGame.user.takeTurn('Fire');
+//   currentGame.enemy.enemyTurn(currentGame.difficulty);
+// });
+//
+// earthChampion.addEventListener('click', function() {
+//   currentGame.user.takeTurn('Earth');
+//   currentGame.enemy.enemyTurn(currentGame.difficulty);
+// });
+//
+// waterChampion.addEventListener('click', function() {
+//   currentGame.user.takeTurn('Water');
+//   currentGame.enemy.enemyTurn(currentGame.difficulty);
+// });
+//
+// airChampion.addEventListener('click', function() {
+//   currentGame.user.takeTurn('Air');
+//   currentGame.enemy.enemyTurn(currentGame.difficulty);
+// });
+//
+// voidChampion.addEventListener('click', function() {
+//   currentGame.user.takeTurn('Void');
+//   currentGame.enemy.enemyTurn(currentGame.difficulty);
+// });
 
 changeGameButton.addEventListener('click', goToGameModeView);
 
@@ -64,4 +97,11 @@ function goToGameModeView() {
   changeGameButton.classList.add('hidden');
   airChampion.classList.remove('hidden');
   voidChampion.classList.remove('hidden');
+}
+
+function goToBattleView() {
+  battleView.classList.remove('.hidden');
+  gameModeView.classList.add('hidden');
+  selectionView.classList.add('hidden');
+  changeGameButton.classList.add('hidden');
 }

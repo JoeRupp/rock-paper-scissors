@@ -7,17 +7,18 @@ class Player {
   }
 
   takeTurn(selection) {
-    if (selection === 'Fire') {
-        this.champion = 'Fire';
-      } else if (selection === 'Water') {
-        this.champion = 'Water';
-      } else if (selection === 'Earth') {
-        this.champion = 'Earth';
-      } else if (selection === 'Air') {
-        this.champion = 'Air';
-      } else if (selection === 'Void') {
-        this.champion = 'Void';
-      }
+    this.champion = selection;
+    // if (selection === 'Fire') {
+    //     this.champion = 'Fire';
+    //   } else if (selection === 'Earth') {
+    //     this.champion = 'Earth';
+    //   } else if (selection === 'Water') {
+    //     this.champion = 'Water';
+    //   } else if (selection === 'Air') {
+    //     this.champion = 'Air';
+    //   } else if (selection === 'Void') {
+    //     this.champion = 'Void';
+    //   }
   }
 
   enemyTurn(difficulty) {
