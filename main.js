@@ -49,6 +49,7 @@ championSelection.addEventListener('click', function(event) {
   currentGame.enemy.enemyTurn(currentGame.difficulty);
   goToBattleView();
   displayChampions();
+  setTimeout(selectExtremeDifficulty, 1500);
 });
 
 function makeNewGame() {
