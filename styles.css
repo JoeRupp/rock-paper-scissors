@@ -157,7 +157,7 @@ header {
 .enemy-champion {
   height: 32vh;
   width: 32vw;
-  background: url(./assets/pigeon-L.png);
+  background-image: url(./assets/pigeon-L.png);
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;

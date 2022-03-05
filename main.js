@@ -1,7 +1,5 @@
 var currentGame;
 
-var champions = ['Fire', 'Earth', 'Water', 'Air', 'Void'];
-
 var userWins = document.querySelector('.user-wins');
 var enemyWins = document.querySelector('.enemy-wins');
 
@@ -16,6 +14,8 @@ var waterChampion = document.querySelector('.water');
 var airChampion = document.querySelector('.air');
 var voidChampion = document.querySelector('.void');
 
+var championSelection = document.querySelector('.champion-options')
+
 var battleView = document.querySelector('.battle');
 var battleOutcome = document.querySelector('.outcome');
 var userChampion = document.querySelector('.user-champion');
@@ -23,18 +23,33 @@ var enemyChampion = document.querySelector('.enemy-champion');
 
 var changeGameButton = document.querySelector('button');
 
+var champions = [
+  {name: 'fire', image: './assets/pigeon-fire-L.png'},
+  {name: 'earth', image: './assets/pigeon-earth-L.png'},
+  {name: 'water', image: './assets/pigeon-water-L.png'},
+  {name: 'air', image: './assets/pigeon-air-L.png'},
+  {name: 'void', image: './assets/pigeon-void-L.png'}
+];
+
 window.addEventListener('load', makeNewGame);
 
 classicGameMode.addEventListener('click', selectClassicDifficulty);
 extremeGameMode.addEventListener('click', selectExtremeDifficulty);
 
-// fireChampion.addEventListener('click', );
-// earthChampion.addEventListener('click', );
-// waterChampion.addEventListener('click', );
-// airChampion.addEventListener('click', );
-// voidChampion.addEventListener('click', );
-
 changeGameButton.addEventListener('click', goToGameModeView);
+
+championSelection.addEventListener('click', function(event) {
+  if (event.target.dataset.element === 'champion') {
+    for (var i = 0; i < champions.length; i++) {
+      if (champions[i].name === event.target.id) {
+        currentGame.user.takeTurn(champions[i]);
+      }
+    }
+  }
+  currentGame.enemy.enemyTurn(currentGame.difficulty);
+  goToBattleView();
+  displayChampions();
+});
 
 function makeNewGame() {
   currentGame = new Game();
@@ -65,3 +80,41 @@ function goToGameModeView() {
   airChampion.classList.remove('hidden');
   voidChampion.classList.remove('hidden');
 }
+
+function goToBattleView() {
+  gameModeView.classList.add('hidden');
+  selectionView.classList.add('hidden');
+  changeGameButton.classList.add('hidden');
+  battleView.classList.remove('hidden');
+}
+
+function displayChampions() {
+  userChampion.style.backgroundImage = `url(${currentGame.user.champion.image})`;
+  enemyChampion.style.backgroundImage = `url(${currentGame.enemy.champion.image})`;
+}
+// BACKUP ---------------------------------------
+
+// fireChampion.addEventListener('click', function() {
+//   currentGame.user.takeTurn('Fire');
+//   currentGame.enemy.enemyTurn(currentGame.difficulty);
+// });
+//
+// earthChampion.addEventListener('click', function() {
+//   currentGame.user.takeTurn('Earth');
+//   currentGame.enemy.enemyTurn(currentGame.difficulty);
+// });
+//
+// waterChampion.addEventListener('click', function() {
+//   currentGame.user.takeTurn('Water');
+//   currentGame.enemy.enemyTurn(currentGame.difficulty);
+// });
+//
+// airChampion.addEventListener('click', function() {
+//   currentGame.user.takeTurn('Air');
+//   currentGame.enemy.enemyTurn(currentGame.difficulty);
+// });
+//
+// voidChampion.addEventListener('click', function() {
+//   currentGame.user.takeTurn('Void');
+//   currentGame.enemy.enemyTurn(currentGame.difficulty);
+// });

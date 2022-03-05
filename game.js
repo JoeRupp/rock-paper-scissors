@@ -2,9 +2,9 @@ class Game {
   constructor() {
     this.difficulty = '';
     this.user = new Player('You', './assets/user-icon.png');
-    this.userChampion = this.user.champion;
+    // this.userChampion = this.user.champion;
     this.enemy = new Player('Enemy', './assets/enemy-icon.png');
-    this.enemyChampion = this.enemy.champion;
+    // this.enemyChampion = this.enemy.champion;
     this.outcome = '';
   }
 
