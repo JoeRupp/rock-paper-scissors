@@ -24,11 +24,11 @@ var enemyChampion = document.querySelector('.enemy-champion');
 var changeGameButton = document.querySelector('button');
 
 var champions = [
-  {name: 'fire', image: './assets/pigeon-fire-L.png', weakness: ['water', 'air']},
-  {name: 'earth', image: './assets/pigeon-earth-L.png', weakness: ['fire', 'void']},
-  {name: 'water', image: './assets/pigeon-water-L.png', weakness: ['earth', 'void']},
-  {name: 'air', image: './assets/pigeon-air-L.png', weakness: ['earth', 'water']},
-  {name: 'void', image: './assets/pigeon-void-L.png', weakness: ['fire', 'air']}
+  {name: 'fire', image: './assets/pigeon-fire-L.png', weakness: ['water', 'air', 'test']},
+  {name: 'earth', image: './assets/pigeon-earth-L.png', weakness: ['fire', 'void', 'test']},
+  {name: 'water', image: './assets/pigeon-water-L.png', weakness: ['earth', 'void', 'test']},
+  {name: 'air', image: './assets/pigeon-air-L.png', weakness: ['earth', 'water', 'test']},
+  {name: 'void', image: './assets/pigeon-void-L.png', weakness: ['fire', 'air', 'test']}
 ];
 
 window.addEventListener('load', makeNewGame);
