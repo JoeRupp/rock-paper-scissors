@@ -24,11 +24,11 @@ var enemyChampion = document.querySelector('.enemy-champion');
 var changeGameButton = document.querySelector('button');
 
 var champions = [
-  {name: 'fire', image: './assets/pigeon-fire-L.png', weakness: ['water', 'air']},
-  {name: 'earth', image: './assets/pigeon-earth-L.png', weakness: ['fire', 'void']},
-  {name: 'water', image: './assets/pigeon-water-L.png', weakness: ['earth', 'void']},
-  {name: 'air', image: './assets/pigeon-air-L.png', weakness: ['earth', 'water']},
-  {name: 'void', image: './assets/pigeon-void-L.png', weakness: ['fire', 'air']}
+  {name: 'fire', image: './assets/pigeon-fire-L.png'},
+  {name: 'earth', image: './assets/pigeon-earth-L.png'},
+  {name: 'water', image: './assets/pigeon-water-L.png'},
+  {name: 'air', image: './assets/pigeon-air-L.png'},
+  {name: 'void', image: './assets/pigeon-void-L.png'}
 ];
 
 window.addEventListener('load', makeNewGame);
@@ -48,10 +48,7 @@ championSelection.addEventListener('click', function(event) {
   }
   currentGame.enemy.enemyTurn(currentGame.difficulty);
   goToBattleView();
-  currentGame.battle()
   displayChampions();
-  setTimeout(selectExtremeDifficulty, 1500);
-  updateScore();
 });
 
 function makeNewGame() {
@@ -94,12 +91,6 @@ function goToBattleView() {
 function displayChampions() {
   userChampion.style.backgroundImage = `url(${currentGame.user.champion.image})`;
   enemyChampion.style.backgroundImage = `url(${currentGame.enemy.champion.image})`;
-  battleOutcome.innerText = currentGame.user.battleOutcome();
-}
-
-function updateScore() {
-  userWins.innerText = `wins: ${currentGame.user.numOfWins}`;
-  enemyWins.innerText = `wins: ${currentGame.enemy.numOfWins}`;
 }
 // BACKUP ---------------------------------------
 
