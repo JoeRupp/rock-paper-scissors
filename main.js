@@ -24,11 +24,11 @@ var enemyChampion = document.querySelector('.enemy-champion');
 var changeGameButton = document.querySelector('button');
 
 var champions = [
-  {name: 'fire', image: './assets/pigeon-fire-L.png'},
-  {name: 'earth', image: './assets/pigeon-earth-L.png'},
-  {name: 'water', image: './assets/pigeon-water-L.png'},
-  {name: 'air', image: './assets/pigeon-air-L.png'},
-  {name: 'void', image: './assets/pigeon-void-L.png'}
+  {name: 'fire', image: './assets/pigeon-fire-L.png', weakness: ['water', 'air', 'test']},
+  {name: 'earth', image: './assets/pigeon-earth-L.png', weakness: ['fire', 'void', 'test']},
+  {name: 'water', image: './assets/pigeon-water-L.png', weakness: ['earth', 'void', 'test']},
+  {name: 'air', image: './assets/pigeon-air-L.png', weakness: ['earth', 'water', 'test']},
+  {name: 'void', image: './assets/pigeon-void-L.png', weakness: ['fire', 'air', 'test']}
 ];
 
 window.addEventListener('load', makeNewGame);
@@ -47,8 +47,7 @@ championSelection.addEventListener('click', function(event) {
     }
   }
   currentGame.enemy.enemyTurn(currentGame.difficulty);
-  goToBattleView();
-  displayChampions();
+  battleChampions();
 });
 
 function makeNewGame() {
@@ -61,6 +60,7 @@ function selectClassicDifficulty() {
   changeGameButton.classList.remove('hidden');
   airChampion.classList.add('hidden');
   voidChampion.classList.add('hidden');
+  battleView.classList.add('hidden');
   var difficultyChoice = 'Classic';
   currentGame.chooseDifficulty(difficultyChoice);
 }
@@ -69,6 +69,7 @@ function selectExtremeDifficulty() {
   gameModeView.classList.add('hidden');
   selectionView.classList.remove('hidden');
   changeGameButton.classList.remove('hidden');
+  battleView.classList.add('hidden');
   var difficultyChoice = 'Extreme';
   currentGame.chooseDifficulty(difficultyChoice);
 }
@@ -88,33 +89,25 @@ function goToBattleView() {
   battleView.classList.remove('hidden');
 }
 
+function battleChampions() {
+  currentGame.battle();
+  goToBattleView();
+  displayChampions();
+  updateScore();
+  if (currentGame.difficulty === 'Extreme') {
+    setTimeout(selectExtremeDifficulty, 1500);
+  } else {
+    setTimeout(selectClassicDifficulty, 1500);
+  }
+}
+
 function displayChampions() {
   userChampion.style.backgroundImage = `url(${currentGame.user.champion.image})`;
   enemyChampion.style.backgroundImage = `url(${currentGame.enemy.champion.image})`;
+  battleOutcome.innerText = currentGame.outcome;
 }
-// BACKUP ---------------------------------------
 
-// fireChampion.addEventListener('click', function() {
-//   currentGame.user.takeTurn('Fire');
-//   currentGame.enemy.enemyTurn(currentGame.difficulty);
-// });
-//
-// earthChampion.addEventListener('click', function() {
-//   currentGame.user.takeTurn('Earth');
-//   currentGame.enemy.enemyTurn(currentGame.difficulty);
-// });
-//
-// waterChampion.addEventListener('click', function() {
-//   currentGame.user.takeTurn('Water');
-//   currentGame.enemy.enemyTurn(currentGame.difficulty);
-// });
-//
-// airChampion.addEventListener('click', function() {
-//   currentGame.user.takeTurn('Air');
-//   currentGame.enemy.enemyTurn(currentGame.difficulty);
-// });
-//
-// voidChampion.addEventListener('click', function() {
-//   currentGame.user.takeTurn('Void');
-//   currentGame.enemy.enemyTurn(currentGame.difficulty);
-// });
+function updateScore() {
+  userWins.innerText = `wins: ${currentGame.user.numOfWins}`;
+  enemyWins.innerText = `wins: ${currentGame.enemy.numOfWins}`;
+}

@@ -8,17 +8,6 @@ class Player {
 
   takeTurn(selection) {
     this.champion = selection;
-    // if (selection === 'Fire') {
-    //     this.champion = 'Fire';
-    //   } else if (selection === 'Earth') {
-    //     this.champion = 'Earth';
-    //   } else if (selection === 'Water') {
-    //     this.champion = 'Water';
-    //   } else if (selection === 'Air') {
-    //     this.champion = 'Air';
-    //   } else if (selection === 'Void') {
-    //     this.champion = 'Void';
-    //   }
   }
 
   enemyTurn(difficulty) {
@@ -30,16 +19,4 @@ class Player {
       this.champion = champions[i];
     }
   }
-
-  battleOutcome(outcome) {
-    if (outcome === 'Winner') {
-      this.numOfWins++;
-      return 'You Won!';
-    } else if (outcome === 'Tie') {
-      return 'Tie!';
-    } else if (outcome === 'Loser'){
-      return 'You Lost!';
-    }
-  }
-
 };
