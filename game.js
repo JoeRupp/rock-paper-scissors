@@ -16,34 +16,28 @@ class Game {
     }
   }
 
-  battle() {
-    if (this.enemy.champion.name === this.user.champion.weakness[0] || this.user.champion.weakness[1]) {
-      var outcome = "You Lost!"
+  battle(userChoice, enemyChoice) {
+    if (userChoice === "Fire" && enemyChoice === "Earth" || "Void") {
+      var outcome = 'Winner';
+      this.user.battleOutcome(outcome);
+    } else if (userChoice === "Earth" && enemyChoice === "Water" || "Air") {
+      var outcome = 'Winner';
+      this.user.battleOutcome(outcome);
+    } else if (userChoice === "Water" && enemyChoice === "Fire" || "Air") {
+      var outcome = 'Winner';
+      this.user.battleOutcome(outcome);
+    } else if (userChoice === "Air" && enemyChoice === "Void" || "Fire") {
+      var outcome = 'Winner';
+      this.user.battleOutcome(outcome);
+    } else if (userChoice === "Void" && enemyChoice === "Earth" || "Water") {
+      var outcome = 'Winner';
+      this.user.battleOutcome(outcome);
+    } else if (userChoice === enemyChoice) {
+      var outcome = 'Tie';
+      this.user.battleOutcome(outcome);
+    } else {
+      var outcome = 'Loser';
+      this.user.battleOutcome(outcome);
     }
   }
-
-//   battle(userChoice, enemyChoice) {
-//     if (userChoice === "Fire" && enemyChoice === "Earth" || "Void") {
-//       var outcome = 'Winner';
-//       this.user.battleOutcome(outcome);
-//     } else if (userChoice === "Earth" && enemyChoice === "Water" || "Air") {
-//       var outcome = 'Winner';
-//       this.user.battleOutcome(outcome);
-//     } else if (userChoice === "Water" && enemyChoice === "Fire" || "Air") {
-//       var outcome = 'Winner';
-//       this.user.battleOutcome(outcome);
-//     } else if (userChoice === "Air" && enemyChoice === "Void" || "Fire") {
-//       var outcome = 'Winner';
-//       this.user.battleOutcome(outcome);
-//     } else if (userChoice === "Void" && enemyChoice === "Earth" || "Water") {
-//       var outcome = 'Winner';
-//       this.user.battleOutcome(outcome);
-//     } else if (userChoice === enemyChoice) {
-//       var outcome = 'Tie';
-//       this.user.battleOutcome(outcome);
-//     } else {
-//       var outcome = 'Loser';
-//       this.user.battleOutcome(outcome);
-//     }
-//   }
-// };
+};
