@@ -1,3 +1,5 @@
+ // VARIABLES ----------------------------------------
+
 var currentGame;
 
 var userWins = document.querySelector('.user-wins');
@@ -8,9 +10,9 @@ var classicGameMode = document.querySelector('.classic-choice');
 var extremeGameMode = document.querySelector('.extreme-choice');
 
 var selectionView = document.querySelector('.selection');
-var fireChampion = document.querySelector('.fire');
-var earthChampion = document.querySelector('.earth');
-var waterChampion = document.querySelector('.water');
+// var fireChampion = document.querySelector('.fire');
+// var earthChampion = document.querySelector('.earth');
+// var waterChampion = document.querySelector('.water');
 var airChampion = document.querySelector('.air');
 var voidChampion = document.querySelector('.void');
 
@@ -21,15 +23,18 @@ var battleOutcome = document.querySelector('.outcome');
 var userChampion = document.querySelector('.user-champion');
 var enemyChampion = document.querySelector('.enemy-champion');
 
-var changeGameButton = document.querySelector('button');
+var changeGameButton = document.querySelector('.change-btn');
+var resetScoreButton = document.querySelector('.reset-btn');
 
 var champions = [
-  {name: 'fire', image: './assets/pigeon-fire-L.png', weakness: ['water', 'air', 'test']},
-  {name: 'earth', image: './assets/pigeon-earth-L.png', weakness: ['fire', 'void', 'test']},
-  {name: 'water', image: './assets/pigeon-water-L.png', weakness: ['earth', 'void', 'test']},
-  {name: 'air', image: './assets/pigeon-air-L.png', weakness: ['earth', 'water', 'test']},
-  {name: 'void', image: './assets/pigeon-void-L.png', weakness: ['fire', 'air', 'test']}
+  {name: 'fire', image: './assets/pigeon-fire-L.png', weakness: ['water', 'air']},
+  {name: 'earth', image: './assets/pigeon-earth-L.png', weakness: ['fire', 'void']},
+  {name: 'water', image: './assets/pigeon-water-L.png', weakness: ['earth', 'void']},
+  {name: 'air', image: './assets/pigeon-air-L.png', weakness: ['earth', 'water']},
+  {name: 'void', image: './assets/pigeon-void-L.png', weakness: ['fire', 'air']}
 ];
+
+ // EVENT LISTENERS ----------------------------------------
 
 window.addEventListener('load', makeNewGame);
 
@@ -37,6 +42,7 @@ classicGameMode.addEventListener('click', selectClassicDifficulty);
 extremeGameMode.addEventListener('click', selectExtremeDifficulty);
 
 changeGameButton.addEventListener('click', goToGameModeView);
+resetScoreButton.addEventListener('click', resetScore);
 
 championSelection.addEventListener('click', function(event) {
   if (event.target.dataset.element === 'champion') {
@@ -49,6 +55,8 @@ championSelection.addEventListener('click', function(event) {
   currentGame.enemy.enemyTurn(currentGame.difficulty);
   battleChampions();
 });
+
+ // FUNCTIONS ----------------------------------------
 
 function makeNewGame() {
   currentGame = new Game();
@@ -94,6 +102,7 @@ function battleChampions() {
   goToBattleView();
   displayChampions();
   updateScore();
+  revealScoreButton();
   if (currentGame.difficulty === 'Extreme') {
     setTimeout(selectExtremeDifficulty, 1500);
   } else {
@@ -110,4 +119,17 @@ function displayChampions() {
 function updateScore() {
   userWins.innerText = `wins: ${currentGame.user.numOfWins}`;
   enemyWins.innerText = `wins: ${currentGame.enemy.numOfWins}`;
+}
+
+function revealScoreButton() {
+  if (currentGame.user.numOfWins > 0 || currentGame.enemy.numOfWins > 0) {
+    resetScoreButton.classList.remove('hidden');
+  }
+}
+
+function resetScore() {
+  currentGame.user.numOfWins = 0;
+  currentGame.enemy.numOfWins = 0;
+  updateScore();
+  resetScoreButton.classList.add('hidden');
 }
