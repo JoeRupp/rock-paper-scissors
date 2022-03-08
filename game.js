@@ -4,7 +4,7 @@ class Game {
     this.user = new Player('You', './assets/user-icon.png');
     this.enemy = new Player('Enemy', './assets/enemy-icon.png');
     this.outcome = '';
-  }
+  };
 
   chooseDifficulty(difficultyChoice) {
     if (difficultyChoice === 'Extreme') {
@@ -12,7 +12,7 @@ class Game {
     } else {
       this.difficulty = 'Classic';
     }
-  }
+  };
 
   battle() {
     if (this.enemy.champion.name === this.user.champion.weakness[0]) {
@@ -30,5 +30,5 @@ class Game {
     } else if (this.enemy.champion.name === this.user.champion.name) {
       this.outcome = 'Tie!';
     }
-  }
+  };
 };

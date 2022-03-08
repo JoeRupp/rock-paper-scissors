@@ -10,7 +10,7 @@
     </section>
     <header>
       <section class="user">
-        <img class="icon" src="./assets/user-icon.png" alt="good pigeon">
+        <img class="icon token" src="./assets/user-icon.png" alt="good pigeon">
         <div class="player-info">
           <h2>You</h2>
           <p class="user-wins">wins: 0</p>
@@ -28,21 +28,21 @@
       <section class="game-mode">
         <div class="classic-choice difficulty-choice">
           <h2>Play Classic</h2>
-          <p>
-            fire -> earth <br>
-            earth -> water <br>
-            water -> fire <br>
-          </p>
+          <ul>
+            <li>fire -> earth</li>
+            <li>earth -> water</li>
+            <li>water -> fire</li>
+          </ul>
         </div>
         <div class="extreme-choice difficulty-choice">
           <h2>Play Extreme</h2>
-          <p>
-            fire -> earth / void <br>
-            earth -> water / air <br>
-            water -> fire / air <br>
-            air -> void / fire <br>
-            void -> earth / water <br>
-          </p>
+          <ul>
+            <li>fire -> earth / void</li>
+            <li>earth -> water / air</li>
+            <li>water -> fire / air</li>
+            <li>air -> void / fire</li>
+            <li>void -> earth / water</li>
+          </ul>
         </div>
       </section>
       <section class="selection hidden">
@@ -83,7 +83,8 @@
       </section>
     </main>
     <footer>
-      <button class="hidden">Change Game</button>
+      <button class="change-btn hidden">Change Game</button>
+      <button class="reset-btn hidden">Reset Score</button>
     </footer>
   </body>
   <script type="text/javascript" src="player.js"></script>

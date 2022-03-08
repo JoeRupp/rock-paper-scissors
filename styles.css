@@ -1,4 +1,4 @@
-/* UNIVERSAL -------------------------------------- */
+  /* UNIVERSAL -------------------------------------- */
 * {
   font-family: 'Poppins', sans-serif;
 }
@@ -13,14 +13,18 @@ body {
   margin: 0px;
 }
 
-/* PLAYERS ---------------------------------------- */
-
 h1 {
   height: 10%;
-  font-size: 50px;
+  font-size: 40px;
   text-align: center;
   margin: 0px;
 }
+
+h2 {
+  margin: 0;
+}
+
+/* PLAYERS ---------------------------------------- */
 
 header {
   height: 20%;
@@ -66,6 +70,12 @@ header {
 
 /* MAIN - GAME MODE ------------------------------- */
 
+ul {
+  list-style-type: none;
+  padding: 0%;
+  margin: 5% 0% 0% 0%;
+}
+
 .game-mode {
   height: 60vh;
   display: flex;
@@ -103,7 +113,8 @@ header {
 .choices {
   background-color: white;
   height: 90%;
-  width: 80%;
+  padding-left: 5%;
+  padding-right: 5%;
   border-radius: 20px;
   display: flex;
   justify-content: space-evenly;
@@ -169,17 +180,15 @@ header {
 
 /* FOOTER ----------------------------------------- */
 
-h2 {
-  margin: 0;
-}
-
 footer {
   height: 10%;
 }
 
 button {
+  height: 45%;
   border: 0px;
   padding: 10px 10px 10px 25px;
+  margin-bottom: 10px;
   font-size: 18px;
   background-color: white;
   border-top-right-radius: 25px;
@@ -194,6 +203,8 @@ button:hover {
   background-color: #F9E6FF;
   transform: scale(1.15);
 }
+
+/* UNIVERSAL -------------------------------------- */
 
 .hidden {
 	display: none;
