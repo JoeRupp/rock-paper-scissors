@@ -129,14 +129,14 @@ ul {
 
 /* MAIN - SELECTION ------------------------------- */
 
-.selection {
+.selection-view {
   height: 60vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.choices {
+.selection-box {
   background-color: white;
   height: 80%;
   padding-left: 5%;
@@ -155,7 +155,7 @@ ul {
   align-items: center;
 }
 
-.champion {
+.champ-box {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -163,18 +163,18 @@ ul {
   cursor: pointer;
 }
 
-.champion:hover {
+.champ-box:hover {
   transform: scale(1.15);
 }
 
-.extreme {
+.champion-img {
   height: 20vh;
   width: auto;
 }
 
 /* MAIN - BATTLE ---------------------------------- */
 
-.battle {
+.battle-view {
   height: 60vh;
   display: flex;
   justify-content: space-evenly;
@@ -182,7 +182,7 @@ ul {
   align-items: center;
 }
 
-.battle-ground {
+.battleground {
   height: 50vh;
   width: 75%;
   display: flex;
@@ -210,7 +210,7 @@ footer {
   height: 10%;
 }
 
-/* UNIVERSAL -------------------------------------- */
+/* OTHER -------------------------------------- */
 
 .hidden {
 	display: none;

@@ -31,4 +31,19 @@ class Game {
       this.outcome = 'Tie!';
     }
   };
+
+  resetGameScore() {
+    this.user.numOfWins = 0;
+    this.enemy.numOfWins = 0;
+  };
+
+  changeUserToken() {
+    if (this.user.token === `./assets/user-icon.png`) {
+      this.user.token = `./assets/user-icon-2.png`;
+    } else if (this.user.token === `./assets/user-icon-2.png`) {
+      this.user.token = `./assets/user-icon-3.png`;
+    } else if (this.user.token === `./assets/user-icon-3.png`) {
+      this.user.token = `./assets/user-icon.png`;
+    }
+  };
 };
