@@ -10,12 +10,12 @@ var gameModeView = document.querySelector('.game-mode');
 var classicGameMode = document.querySelector('.classic-choice');
 var extremeGameMode = document.querySelector('.extreme-choice');
 
-var selectionView = document.querySelector('.selection');
+var selectionView = document.querySelector('.selection-view');
 var championSelection = document.querySelector('.champion-options')
 var airChampion = document.querySelector('.air');
 var voidChampion = document.querySelector('.void');
 
-var battleView = document.querySelector('.battle');
+var battleView = document.querySelector('.battle-view');
 var battleOutcome = document.querySelector('.outcome');
 var userChampion = document.querySelector('.user-champion');
 var enemyChampion = document.querySelector('.enemy-champion');
@@ -53,6 +53,7 @@ championSelection.addEventListener('click', function(event) {
       }
     }
   }
+  
   currentGame.enemy.enemyTurn(currentGame.difficulty);
   battleChampions();
 });
@@ -133,19 +134,12 @@ function revealScoreButton() {
 };
 
 function resetScore() {
-  currentGame.user.numOfWins = 0;
-  currentGame.enemy.numOfWins = 0;
+  currentGame.resetGameScore();
   updateScore();
   resetScoreButton.classList.add('hidden');
 };
 
 function changeUserIcon() {
-  if (currentGame.user.token === `./assets/user-icon.png`) {
-    currentGame.user.token = `./assets/user-icon-2.png`;
-  } else if (currentGame.user.token === `./assets/user-icon-2.png`) {
-    currentGame.user.token = `./assets/user-icon-3.png`;
-  } else if (currentGame.user.token === `./assets/user-icon-3.png`) {
-    currentGame.user.token = `./assets/user-icon.png`;
-  }
+  currentGame.changeUserToken();
   userIcon.src = currentGame.user.token;
 };
