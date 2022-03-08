@@ -24,17 +24,42 @@ h2 {
   margin: 0;
 }
 
+
+button {
+  height: 45%;
+  border: 0px;
+  padding: 10px 10px 10px 25px;
+  margin-bottom: 10px;
+  font-size: 18px;
+  background-color: white;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #F9E6FF;
+  transform: scale(1.15);
+}
+
 /* PLAYERS ---------------------------------------- */
 
 header {
   height: 20%;
   margin: 0;
+}
+
+.players {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.user {
+.user,
+.enemy {
   background-color: white;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
@@ -46,14 +71,10 @@ header {
 }
 
 .enemy {
-  background-color: white;
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
-  padding: 10px 25px;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
 }
 
 .icon {
@@ -61,6 +82,11 @@ header {
   width: auto;
   padding-right: 15px;
   padding-left: 15px;
+}
+
+.icon-btn {
+  height: 23%;
+  margin-top: 10px;
 }
 
 .player-info {
@@ -112,7 +138,7 @@ ul {
 
 .choices {
   background-color: white;
-  height: 90%;
+  height: 80%;
   padding-left: 5%;
   padding-right: 5%;
   border-radius: 20px;
@@ -182,26 +208,6 @@ ul {
 
 footer {
   height: 10%;
-}
-
-button {
-  height: 45%;
-  border: 0px;
-  padding: 10px 10px 10px 25px;
-  margin-bottom: 10px;
-  font-size: 18px;
-  background-color: white;
-  border-top-right-radius: 25px;
-  border-bottom-right-radius: 25px;
-  display: flex;
-  align-items: center;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #F9E6FF;
-  transform: scale(1.15);
 }
 
 /* UNIVERSAL -------------------------------------- */

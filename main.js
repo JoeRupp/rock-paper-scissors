@@ -43,6 +43,7 @@ extremeGameMode.addEventListener('click', selectExtremeDifficulty);
 
 changeGameButton.addEventListener('click', goToGameModeView);
 resetScoreButton.addEventListener('click', resetScore);
+changeIconButton.addEventListener('click', changeUserIcon);
 
 championSelection.addEventListener('click', function(event) {
   if (event.target.dataset.element === 'champion') {
@@ -136,4 +137,15 @@ function resetScore() {
   currentGame.enemy.numOfWins = 0;
   updateScore();
   resetScoreButton.classList.add('hidden');
+};
+
+function changeUserIcon() {
+  if (currentGame.user.token === `./assets/user-icon.png`) {
+    currentGame.user.token = `./assets/user-icon-2.png`;
+  } else if (currentGame.user.token === `./assets/user-icon-2.png`) {
+    currentGame.user.token = `./assets/user-icon-3.png`;
+  } else if (currentGame.user.token === `./assets/user-icon-3.png`) {
+    currentGame.user.token = `./assets/user-icon.png`;
+  }
+  userIcon.src = currentGame.user.token;
 };
