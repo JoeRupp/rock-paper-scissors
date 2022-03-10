@@ -18,7 +18,7 @@ This project was a blast to work on! It gave me an opportunity to build a simple
 - Write DRY JavaScript, and use class-to-class interaction to perform most of the functionality. 
 - Write clean and easy to naviagte CSS and HTML. And explore more CSS to make a great user expereince.
 - Differentiate between the Data Model and the DOM - utilizing event delegation and event listeners to handle how things get displayed/manipulated.
-- Break down large problems into steps to find better solitions by working through things slowly and methodically, as opposed to looking for outside help.
+- Break down large problems into steps to find better solutions by working through things slowly and methodically, as opposed to looking for outside help.
 
 ### Installation Steps
 1. Fork this repo to create your own copy.
