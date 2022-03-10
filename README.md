@@ -12,6 +12,14 @@ Play your favorite game of Rock Paper Scissors, but now with elemental pigeons! 
 ### Collaborators
 - [**Joe Rupp**](https://github.com/JoeRupp)
 
+### Developer Note & Learning Goals
+This project was a blast to work on! It gave me an opportunity to build a simple game completely from scratch using HTML, CSS, and JavaScript. All designs and artwork were also created by me using Illustrator. By the end of the project, I had a great overview of how all the different technologies interacted with one another to create the final deliverable. Throughout the project, I focused on the below goals:
+
+- Write DRY JavaScript, and use class-to-class interaction to perform most of the functionality. 
+- Write clean and easy to naviagte CSS and HTML. And explore more CSS to make a great user expereince.
+- Differeniate between the Data Model and the DOM - utilizing event delegation and event listeners to handle how things get displayed/manipulated.
+- Break down large problems into steps to find better solitions by working through things slowly and methodically, as opposed to looking for outside help.
+
 ### Installation Steps
 1. Fork this repo to create your own copy.
 2. Clone your newly-forked repo. Make sure SSH is selected.
@@ -20,7 +28,7 @@ Play your favorite game of Rock Paper Scissors, but now with elemental pigeons! 
 5. See your changes in the browser by running `open index.html` in your terminal.
 
 ### Deploy link
-~To be updated later
+Check it out [here](https://joerupp.github.io/rock-paper-scissors/).
 
 ### Instructions
  - When the game loads, the user will have two game modes to choose from - classic or extreme. Classic mode has three pigeon champions to pick from, while extreme adds to the complexity and has five champions. The user can toggle between the two modes without losing their current score.
